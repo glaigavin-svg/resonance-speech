@@ -16,7 +16,6 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out 0s;
 }
-
 #recordBtn::before {
     border-radius: 1000px;
     width: 100%;
@@ -34,11 +33,38 @@
   transform: translateY(-6px);
   transform: scale(1.01);
 }
-
 #recordBtn.recording {
-    background: linear-gradient(#242424 0%, #343434 100%);
+    background: linear-gradient(#252525 0%, #494949 100%);
     border-width: 3px;
     padding: 44px;
+    animation-duration: 1500ms;
+    animation-iteration-count:infinite;
+    animation-name: recording-speak;
+}
+@keyframes recording-speak {
+    25%,
+    50% {
+        scale: 100%
+    }
+    75% {
+        scale: 99%
+    }
+}
+#recordBtn.processing {
+  background: linear-gradient(#242424 0%, #343434 100%);
+  animation-duration: 1500ms;
+  animation-iteration-count: infinite;
+  animation-name: processing;
+  
+}
+@keyframes processing {
+    25%,
+    50% {
+        scale: 100%
+    }
+    75% {
+        scale: 99%
+    }
 }
 .sentence-block { 
     align-items: center;
@@ -52,7 +78,7 @@
     transition: all 0.3s ease-in-out 0s;
 }
 body {
-    background-color: linear-gradient(#f2f2f2 0%, #ffffff 100%);
+    background: linear-gradient(45deg,#ffffff 0%, #f1f1f1 50%, #ffffff 100%);
     margin: 0;
     padding: 20px;
     font-family: 'Nunito', sans-serif;
