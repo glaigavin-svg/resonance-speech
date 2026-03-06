@@ -10,7 +10,7 @@
     <button id="recordBtn">Tap to Start Speaking</button>
     <div id="transcriptArea"></div>
 
-    <script>
+    <script> 
         let mediaRecorder;
         let audioChunks = [];
         let isRecording = false;
@@ -24,9 +24,10 @@
                 mediaRecorder.ondataavailable = event => { // catching the audio that comes from the mic
                     audioChunks.push(event.data);
                 };
-                
+
                 mediaRecorder.onstop = async () => { // when the user stops recording
                     recordBtn.innerText = 'Processing'; // updating the button text
+                    recordBtn.classList.add('processing')
                     
                     // package the audio into a file
                     const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
@@ -49,6 +50,7 @@
                         document.getElementById('transcriptArea').appendChild(newBlock);
                     }
                     recordBtn.innerText = 'Tap to Start Speaking';
+                    recordBtn.classList.remove('processing')
                     audioChunks = []; // reset for next sentence
                 };
 
