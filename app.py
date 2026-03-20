@@ -40,7 +40,7 @@ def transcribe_audio():
         )
 
         # actually sending it to google
-        response = client.long_running_recognize(config = config, audio = audio)
+        response = client.recognize(config = config, audio = audio)
 
         # extract google response because it's messy
         transcript = ""
