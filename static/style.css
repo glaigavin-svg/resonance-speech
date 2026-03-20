@@ -83,3 +83,38 @@ body {
     padding: 20px;
     font-family: 'Nunito', sans-serif;
 }
+
+/*changes made below to add in COPY TO CLIPBOARD feature*/
+#copyBtn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(#171717 0%, #313131 100%);
+    color: white;
+    border-color: linear-gradient(180deg, #171717 0%, #313131 100%);
+    border-width: 2px;
+    border-radius: 15px;
+    box-shadow: 12px 12px 24px #575757a3;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+#copyBtn:hover {
+  background: linear-gradient(#242424 0%, #343434 100%);
+  border-width: 0px;
+  transform: translateY(-6px);
+  transform: scale(1.01);
+}
+
+#copyBtn.copied {
+  background: linear-gradient(#1b331b 0%, #2e522e 100%);
+}
+
+    
+
